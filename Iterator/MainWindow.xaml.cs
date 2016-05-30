@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 
 namespace Iterator
 {
@@ -11,7 +12,10 @@ namespace Iterator
 
         private void ClickMeButton_Click(object sender, RoutedEventArgs e)
         {
+            IEnumerable<Person> people = People.GetPeople();
 
+            foreach (var person in people)
+                PersonListBox.Items.Add(person);
         }
     }
 }

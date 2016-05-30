@@ -12,26 +12,47 @@ namespace ChainOfResponsibility
 
         private void ClickMeButton_Click(object sender, RoutedEventArgs e)
         {
-            Method1();
+            try
+            {
+                Method1();
+            }
+            catch (ArgumentException)
+            {
+                TextBlock1.Text = "Caught in Click";
+            }
         }
 
         private void Method1()
         {
-            Method2();
+            try
+            {
+                Method2();
+            }
+            catch (NullReferenceException)
+            {
+                TextBlock1.Text = "Caught in Method 1";
+            }
         }
 
         private void Method2()
         {
-            switch (ExceptionBox.Text)
+            try
             {
-                case "AccessViolationException":
-                    throw new AccessViolationException();
-                case "NullReferenceException":
-                    throw new NullReferenceException();
-                case "ArgumentException":
-                    throw new ArgumentException();
-                case "Exception":
-                    throw new Exception();
+                switch (ExceptionBox.Text)
+                {
+                    case "AccessViolationException":
+                        throw new AccessViolationException();
+                    case "NullReferenceException":
+                        throw new NullReferenceException();
+                    case "ArgumentException":
+                        throw new ArgumentException();
+                    case "Exception":
+                        throw new Exception();
+                }
+            }
+            catch (AccessViolationException)
+            {
+                TextBlock1.Text = "Caught in Method 2";
             }
         }
     }

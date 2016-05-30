@@ -14,6 +14,11 @@ namespace Facade
         {
             IEnumerable<Person> people = People.GetPeople();
 
+            using (var enumerator = people.GetEnumerator())
+            {
+                while (enumerator.MoveNext())
+                    PersonListBox.Items.Add(enumerator.Current);
+            }
         }
     }
 }

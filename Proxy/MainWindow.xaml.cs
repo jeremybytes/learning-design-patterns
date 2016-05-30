@@ -12,7 +12,11 @@ namespace Proxy
 
         private void ClickMeButton_Click(object sender, RoutedEventArgs e)
         {
+            var proxy = new PersonServiceClient();
+            var people = proxy.GetPeople();
 
+            foreach (var person in people)
+                PersonListBox.Items.Add(person);
         }
     }
 }

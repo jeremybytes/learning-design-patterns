@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         WindowStartupLocation="CenterScreen"
-        Title="Chain of Responsibility" Height="225" Width="700">
+        Title="Chain of Responsibility" Height="240" Width="700">
     <Border x:Name="LayoutRoot" Padding="5"
             BorderBrush="{StaticResource ApplicationForeground}" BorderThickness="2" 
             Background="{StaticResource ApplicationBackground}">
@@ -12,31 +12,30 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Button x:Name="ClickMeButton" Grid.Column="0"
-                    Grid.RowSpan="4"
+            <ComboBox x:Name="ExceptionBox"
+                      Grid.Row="0" Margin="0,0,0,10"
+                      FontSize="20">
+                <ComboBoxItem IsSelected="True">AccessViolationException</ComboBoxItem>
+                <ComboBoxItem>NullReferenceException</ComboBoxItem>
+                <ComboBoxItem>ArgumentException</ComboBoxItem>
+                <ComboBoxItem>Exception</ComboBoxItem>
+            </ComboBox>
+
+            <Button x:Name="ClickMeButton" Grid.Row="1" Grid.RowSpan="4"
                     Click="ClickMeButton_Click"
                     Style="{StaticResource GoButtonStyle}">
-                <StackPanel>
-                    <ComboBox x:Name="ExceptionBox" Grid.Column="1"
-                      Grid.Row="1" Margin="0,0,0,10"
-                      FontSize="20">
-                        <ComboBoxItem IsSelected="True">AccessViolationException</ComboBoxItem>
-                        <ComboBoxItem>NullReferenceException</ComboBoxItem>
-                        <ComboBoxItem>ArgumentException</ComboBoxItem>
-                        <ComboBoxItem>Exception</ComboBoxItem>
-                    </ComboBox>
-                    <TextBlock Text="Throw Exception"
+                <TextBlock Text="Throw Exception"
                                Style="{StaticResource ApplicationText}" />
-                </StackPanel>
             </Button>
 
-            
+
             <TextBlock x:Name="TextBlock1" Grid.Column="1"
                        Grid.Row="1"
                        Style="{StaticResource ApplicationText}" />

@@ -1,21 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using Shared;
 using System.Windows;
 
-namespace Iterator
+namespace Iterator;
+
+public partial class MainWindow : Window
 {
-    public partial class MainWindow : Window
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        private void ClickMeButton_Click(object sender, RoutedEventArgs e)
+    private async void ClickMeButton_Click(object sender, RoutedEventArgs e)
+    {
+        IEnumerable<Person> people = People.GetPeople();
+        foreach (var person in people)
         {
-            IEnumerable<Person> people = People.GetPeople();
-
-            foreach (var person in people)
-                PersonListBox.Items.Add(person);
+            await Task.Delay(500);
+            PersonListBox.Items.Add(person);
         }
     }
 }

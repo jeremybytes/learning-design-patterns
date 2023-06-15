@@ -1,24 +1,30 @@
-﻿using System.Collections.Generic;
+﻿using Shared;
 using System.Windows;
 
-namespace Facade
+namespace Facade;
+
+public partial class MainWindow : Window
 {
-    public partial class MainWindow : Window
+    public MainWindow()
     {
-        public MainWindow()
+        InitializeComponent();
+    }
+
+    private async void ClickMeButton_Click(object sender, RoutedEventArgs e)
+    {
+        IEnumerable<Person> people = People.GetPeople();
+
+        using IEnumerator<Person> enumerator = people.GetEnumerator();
+        while(enumerator.MoveNext())
         {
-            InitializeComponent();
+            await Task.Delay(500);
+            PersonListBox.Items.Add(enumerator.Current);
         }
 
-        private void ClickMeButton_Click(object sender, RoutedEventArgs e)
-        {
-            IEnumerable<Person> people = People.GetPeople();
-
-            using (var enumerator = people.GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                    PersonListBox.Items.Add(enumerator.Current);
-            }
-        }
+        //foreach (var person in people)
+        //{
+        //    await Task.Delay(500);
+        //    PersonListBox.Items.Add(person);
+        //}
     }
 }

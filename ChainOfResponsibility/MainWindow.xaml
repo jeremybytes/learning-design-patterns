@@ -1,8 +1,11 @@
 ﻿<Window x:Class="ChainOfResponsibility.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChainOfResponsibility"
         WindowStartupLocation="CenterScreen"
-        Title="Chain of Responsibility" Height="240" Width="700">
+        Title="Chain of Responsibility" Height="240" Width="780">
     <Border x:Name="LayoutRoot" Padding="5"
             BorderBrush="{StaticResource ApplicationForeground}" BorderThickness="2" 
             Background="{StaticResource ApplicationBackground}">
@@ -36,8 +39,8 @@
             </Button>
 
 
-            <TextBlock x:Name="TextBlock1" Grid.Column="1"
-                       Grid.Row="1"
+            <TextBlock x:Name="TextBlock1" Grid.Column="1" Padding="20"
+                       Grid.Row="1" Grid.RowSpan="2"
                        Style="{StaticResource ApplicationText}" />
         </Grid>
     </Border>

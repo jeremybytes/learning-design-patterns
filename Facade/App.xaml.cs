@@ -1,8 +1,7 @@
 ﻿using System.Windows;
 
-namespace Facade
+namespace Facade;
+
+public partial class App : Application
 {
-    public partial class App : Application
-    {
-    }
 }

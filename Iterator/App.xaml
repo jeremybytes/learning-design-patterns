@@ -85,7 +85,7 @@
         <Style TargetType="Button" x:Key="GoButtonStyle">
             <Setter Property="Foreground" Value="{StaticResource ApplicationTextForeground}"/>
             <Setter Property="Background" Value="{StaticResource ApplicationBackground}"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="22"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Padding" Value="7,3"/>
             <Setter Property="Margin" Value="5"/>
@@ -156,7 +156,7 @@
         <Style TargetType="Button" x:Key="ClearButtonStyle">
             <Setter Property="Foreground" Value="{StaticResource ApplicationTextForeground}"/>
             <Setter Property="Background" Value="{StaticResource ApplicationBackground}"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="22"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Padding" Value="7,3"/>
             <Setter Property="Margin" Value="5"/>
@@ -164,21 +164,39 @@
         </Style>
 
         <!-- Application Styles -->
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Padding" Value="5, 3"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Padding" Value="3"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource ApplicationTextForeground}"/>
+            <Setter Property="FontSize" Value="22"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="HeaderText">
+            <Setter Property="Foreground" Value="{StaticResource ApplicationTextForeground}"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
         <Style TargetType="TextBlock" x:Key="ApplicationText">
             <Setter Property="Foreground" Value="{StaticResource ApplicationTextForeground}"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="22"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
 
         <Style TargetType="TextBlock" x:Key="ListItemTextStyle">
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="26"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
 
         <Style TargetType="TextBlock" x:Key="ListTextStyle">
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="22"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
         </Style>
 
@@ -187,7 +205,7 @@
             <Border BorderBrush="Black"
                 Background="{Binding StartDate,
                 Converter={StaticResource myDecadeBrushConverter}}"
-                    BorderThickness="1" Width="220" Margin="3" 
+                    BorderThickness="1" Width="300" Margin="3" 
                     Padding="10,5">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -200,10 +218,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-                        <TextBlock Text="{Binding FirstName}" 
-                                   Style="{StaticResource ListItemTextStyle}" />
-                        <TextBlock Text=" " />
-                        <TextBlock Text="{Binding LastName}" 
+                        <TextBlock Text="{Binding}" 
                                    Style="{StaticResource ListItemTextStyle}" />
                     </StackPanel>
                     <StackPanel Grid.Row="2" Grid.Column="1">

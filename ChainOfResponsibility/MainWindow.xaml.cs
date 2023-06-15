@@ -1,59 +1,58 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 
-namespace ChainOfResponsibility
+namespace ChainOfResponsibility;
+
+public partial class MainWindow : Window
 {
-    public partial class MainWindow : Window
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        private void ClickMeButton_Click(object sender, RoutedEventArgs e)
+    private void ClickMeButton_Click(object sender, RoutedEventArgs e)
+    {
+        try
         {
-            try
-            {
-                Method1();
-            }
-            catch (ArgumentException)
-            {
-                TextBlock1.Text = "Caught in Click";
-            }
+            Method1();
         }
-
-        private void Method1()
+        catch (ArgumentException)
         {
-            try
-            {
-                Method2();
-            }
-            catch (NullReferenceException)
-            {
-                TextBlock1.Text = "Caught in Method 1";
-            }
+            TextBlock1.Text = "Caught in Click";
         }
+    }
 
-        private void Method2()
+    private void Method1()
+    {
+        try
         {
-            try
+            Method2();
+        }
+        catch (NullReferenceException)
+        {
+            TextBlock1.Text = "Caught in Method1";
+        }
+    }
+
+    private void Method2()
+    {
+        try
+        {
+            switch (ExceptionBox.Text)
             {
-                switch (ExceptionBox.Text)
-                {
-                    case "AccessViolationException":
-                        throw new AccessViolationException();
-                    case "NullReferenceException":
-                        throw new NullReferenceException();
-                    case "ArgumentException":
-                        throw new ArgumentException();
-                    case "Exception":
-                        throw new Exception();
-                }
+                case "AccessViolationException":
+                    throw new AccessViolationException();
+                case "NullReferenceException":
+                    throw new NullReferenceException();
+                case "ArgumentException":
+                    throw new ArgumentException();
+                case "Exception":
+                    throw new Exception();
             }
-            catch (AccessViolationException)
-            {
-                TextBlock1.Text = "Caught in Method 2";
-            }
+
+        }
+        catch (AccessViolationException)
+        {
+            TextBlock1.Text = "Caught in Method2";
         }
     }
 }

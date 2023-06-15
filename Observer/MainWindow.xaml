@@ -1,8 +1,11 @@
 ﻿<Window x:Class="Observer.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        WindowStartupLocation="CenterScreen"
-        Title="Observer" Height="175" Width="500">
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Observer"
+        mc:Ignorable="d"
+        Title="Observer" Height="200" Width="700" WindowStartupLocation="CenterScreen">
     <Border x:Name="LayoutRoot" Padding="5"
             BorderBrush="{StaticResource ApplicationForeground}" BorderThickness="2" 
             Background="{StaticResource ApplicationBackground}">
@@ -22,10 +25,10 @@
                     Grid.RowSpan="4"
                     Content="Click Me!"
                     Style="{StaticResource GoButtonStyle}" />
-            <TextBlock x:Name="TextBlock1" Grid.Column="1"
+            <TextBlock x:Name="TextBlock1" Grid.Column="1" Padding="20,0"
                        Grid.Row="1"
                        Style="{StaticResource ApplicationText}" />
-            <TextBlock x:Name="TextBlock2" Grid.Column="1"
+            <TextBlock x:Name="TextBlock2" Grid.Column="1" Padding="20,0"
                        Grid.Row="2"
                        Style="{StaticResource ApplicationText}" />
         </Grid>

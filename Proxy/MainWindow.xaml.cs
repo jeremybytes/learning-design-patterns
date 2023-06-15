@@ -1,22 +1,21 @@
 ﻿using System.Windows;
-using Proxy.PersonService;
 
-namespace Proxy
+namespace Proxy;
+
+public partial class MainWindow : Window
 {
-    public partial class MainWindow : Window
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        private void ClickMeButton_Click(object sender, RoutedEventArgs e)
+    private async void ClickMeButton_Click(object sender, RoutedEventArgs e)
+    {
+        var proxy = new PeopleServiceProxy();
+        var people = await proxy.GetPeople();
+        foreach (var person in people)
         {
-            var proxy = new PersonServiceClient();
-            var people = proxy.GetPeople();
-
-            foreach (var person in people)
-                PersonListBox.Items.Add(person);
+            PersonListBox.Items.Add(person);
         }
     }
 }

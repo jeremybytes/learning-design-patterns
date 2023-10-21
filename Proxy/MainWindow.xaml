@@ -4,14 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         WindowStartupLocation="CenterScreen"
-        Title="Iterator" Height="680" Width="960">
+        Title="Proxy" Height="650" Width="1300">
     <Border x:Name="LayoutRoot" Padding="5"
             BorderBrush="{StaticResource ApplicationForeground}" BorderThickness="2" 
             Background="{StaticResource ApplicationBackground}">
         <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300px" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="2.3*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />

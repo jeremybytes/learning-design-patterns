@@ -41,7 +41,6 @@ The service endpoint can be found at [http://localhost:9874/people](http://local
 ## Additional Resources  
 
 * Blog Article: [The Use and Misuse of Design Patterns](http://jeremybytes.blogspot.com/2010/07/use-and-misuse-of-design-patterns.html)  
-
 * Blog Article: [Design Patterns: Understand Your Tools](http://jeremybytes.blogspot.com/2012/05/design-patterns-understand-your-tools.html)  
 * Demo (Factory Method Pattern & Inversion of Control Pattern): [IEnumerable, ISaveable, IDontGetIt: Interfaces in .NET](http://www.jeremybytes.com/Demos.aspx#INT)  
 * Blog Article (MVVM Pattern): [Overview of the MVVM Design Pattern](http://www.jeremybytes.com/Demos.aspx#INT)  
@@ -50,3 +49,5 @@ The service endpoint can be found at [http://localhost:9874/people](http://local
 * Recorded Presentation: [Learn the Lingo: Design Patterns](https://youtu.be/QmSf2FtPvKA) recorded live at Silicon Valley Code Camp (Oct 2015)  
 * Pluralsight Course (authored by me): [Design Patterns On-Ramp](http://www.pluralsight.com/training/Courses/TableOfContents/design-patterns-on-ramp)  
 *Note: This one is a bit old (the sample code uses .NET Framework), but the information is still relevant -- that's one of the fun things about design patterns!).*
+
+---

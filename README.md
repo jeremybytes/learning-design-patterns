@@ -1,7 +1,9 @@
 # Design Patterns: Not Just for Architects  
 Level: Introductory 
 
-Design patterns are not just for architects. In fact, you already use Design Patterns but probably don't know it. Observer, Facade, Iterator, Proxy - these are all patterns that allow us to better communicate our ideas with other developers. And once we understand the patterns, we can use solutions that people way smarter than us have already implemented. In this session, we'll take a look at several Gang of Four patterns that we regularly use without realizing it. Don't know who the Gang of Four is? Join us to find out.  
+Design patterns are not just for architects. In fact, you already use design patterns without even knowing it. Observer, Facade, Iterator, Proxy -- these are just a few of the patterns that you have probably used. But it is really hard to use a tool effectively when you don't even know you are using it. So let's fix that.  
+
+In this session, you will learn what design patterns are (and what they are not). You will see both the benefits and consequences of patterns. And you will see several of the Gang of Four patterns that you already use (they may even be built into your programming language). Don't know who the Gang of Four is? You'll learn that, too. Once we understand design patterns, we can find solutions that people way smarter than us have already implemented. This gives us another set of tools that we can use to build great software.  
 
 You will learn:
 

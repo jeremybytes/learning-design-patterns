@@ -1,4 +1,6 @@
 ﻿using Shared;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace Facade;
@@ -15,7 +17,8 @@ public partial class MainWindow : Window
         IEnumerable<Person> people = People.GetPeople();
 
         using IEnumerator<Person> enumerator = people.GetEnumerator();
-        while(enumerator.MoveNext())
+
+        while (enumerator.MoveNext())
         {
             await Task.Delay(500);
             PersonListBox.Items.Add(enumerator.Current);

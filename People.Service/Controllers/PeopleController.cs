@@ -1,29 +1,28 @@
-using Microsoft.AspNetCore.Mvc;
-using Shared;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace People.Service.Controllers;
 
-[ApiController]
 [Route("[controller]")]
+[ApiController]
 public class PeopleController : ControllerBase
 {
-    private readonly IPeopleProvider _provider;
+    private IPeopleProvider provider;
 
     public PeopleController(IPeopleProvider provider)
     {
-        _provider = provider;
+        this.provider = provider;
     }
 
-    [HttpGet()]
+    [HttpGet]
     public Task<List<Person>> GetPeople()
     {
-        return _provider.GetPeople();
+        return provider.GetPeople();
     }
 
     [HttpGet("{id}")]
-    public async Task<Person?> GetPerson(int id)
+    public Task<Person?> GetPerson(int id)
     {
-        var people = await _provider.GetPeople();
-        return people.FirstOrDefault(p => p.Id == id);
+        return provider.GetPerson(id);
     }
+
 }

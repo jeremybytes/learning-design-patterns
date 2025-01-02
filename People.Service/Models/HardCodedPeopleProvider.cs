@@ -1,5 +1,3 @@
-using Shared;
-
 namespace People.Service;
 
 public class HardCodedPeopleProvider : IPeopleProvider
@@ -25,4 +23,11 @@ public class HardCodedPeopleProvider : IPeopleProvider
         };
         return Task.FromResult(p);
     }
+
+    public async Task<Person?> GetPerson(int id)
+    {
+        var people = await GetPeople();
+        return people.FirstOrDefault(p => p.Id == id);
+    }
+
 }

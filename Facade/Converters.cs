@@ -1,4 +1,6 @@
-﻿using System.Windows.Data;
+﻿using System;
+using System.Linq;
+using System.Windows.Data;
 using System.Windows.Media;
 
 namespace Facade;
